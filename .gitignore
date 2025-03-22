@@ -1,0 +1,15 @@
+# Ignore WordPress Core files
+wp-admin/
+wp-includes/
+index.php
+readme.html
+license.txt
+
+# Ignore uploads (optional)
+wp-content/uploads/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+node_modules/
+vendor/
