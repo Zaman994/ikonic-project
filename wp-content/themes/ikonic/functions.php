@@ -51,7 +51,7 @@ add_action('admin_enqueue_scripts', 'enqueue_custom_admin_scripts');
 if (!function_exists('register_custom_menu')) {
     function register_custom_menu()
     {
-        register_nav_menu('primary', __('Primary Menu', 'your-text-domain'));
+        register_nav_menu('primary', __('Primary Menu', 'ikonic'));
     }
 }
 add_action('init', 'register_custom_menu');
@@ -81,6 +81,22 @@ if (!function_exists('custom_theme_setup')) {
     }
 }
 add_action('after_setup_theme', 'custom_theme_setup');
+
+class Custom_Walker_Nav_Menu extends Walker_Nav_Menu
+{
+    function start_lvl(&$output, $depth = 0, $args = null)
+    {
+        $output .= '<ul class="sub-menu">';
+    }
+
+    function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
+    {
+        $class_names = implode(' ', $item->classes);
+        $output .= '<li class="' . esc_attr($class_names) . '">';
+        $output .= '<a href="' . esc_url($item->url) . '">' . esc_html($item->title) . '</a>';
+    }
+}
+
 
 /*
 * Include Required Files

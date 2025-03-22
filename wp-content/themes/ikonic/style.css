@@ -61,6 +61,24 @@ body {
   color: #000000;
 }
 
+.nav-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav-menu li {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+}
+.nav-menu .sub-menu {
+  display: none;
+  position: absolute;
+  background: #fff;
+  list-style: none;
+  padding: 0;
+}
+
 /* Full-width footer */
 .site-footer {
   background-color: #333;

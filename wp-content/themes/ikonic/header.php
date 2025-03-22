@@ -25,8 +25,10 @@
                 // Display the primary navigation menu
                 wp_nav_menu(array(
                     'theme_location' => 'primary',
-                    'menu_class' => 'menu',
-                    'container' => false,
+                    'menu_class'     => 'nav-menu',
+                    'container'      => 'nav',
+                    'depth'          => 3, // Supports multi-level dropdowns
+                    'walker'         => new Custom_Walker_Nav_Menu(), // Custom walker for dropdowns
                 ));
                 ?>
             </nav>
